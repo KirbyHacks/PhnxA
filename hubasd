@@ -17,7 +17,7 @@ Logo.BackgroundTransparency = 1.000
 Logo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Logo.BorderSizePixel = 0
 Logo.Position = UDim2.new(0.5, 0, 0.5, 0)
-Logo.Size = UDim2.new(0, 400, 0, 400)
+Logo.Size = UDim2.new(0, 375, 0, 375)
 Logo.Image = "rbxassetid://16431718724"
 Logo.ImageTransparency = 0.99999999
 Logo.ScaleType = Enum.ScaleType.Crop
@@ -82,7 +82,7 @@ TextButton.BackgroundTransparency = 1.000
 TextButton.Position = UDim2.new(0.022162716, 0, 0.85, -20)
 TextButton.Size = UDim2.new(1, -10, 1, 0) 
 TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "Hide / Show"
+TextButton.Text = "/ Show"
 TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextSize = 20.000
 TextButton.TextWrapped = true
@@ -134,7 +134,7 @@ Frame.InputChanged:Connect(function(input)
     end
 end) 
 
-local Window = Library.CreateLib("GAME | HUB | V1 | NAME | OWNER", "DarkTheme")
+local Window = Library.CreateLib("🔥 PHOENIX-A - Nescoroco & Rlow ⚫", "BloodTheme")
 
 local Tab = Window:NewTab("MAIN")
 local Section = Tab:NewSection("Information")
