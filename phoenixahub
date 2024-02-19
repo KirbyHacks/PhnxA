@@ -1,6 +1,3 @@
--- Theme = DarkTheme - LightTheme - BloodTheme - GrapeTheme - Ocean - Midnight - Sentinel - Synapse - Serpent
--- Plantilla Con Mas Cosas Que Enel Video
--- JUANKO MODS YT
 local Intro = Instance.new("ScreenGui")
 local Logo = Instance.new("ImageLabel")
 local Circle = Instance.new("UICorner")
@@ -29,19 +26,19 @@ Circle.Parent = Logo
 -- Scripts:
 
 local function ACNFZ_fake_script() -- Intro.Animate 
-    local script = Instance.new('LocalScript', Intro)
+  local script = Instance.new('LocalScript', Intro)
 
-    wait(1)
-    local noob = script.Parent.Logo
-    Tween = function(Obj, Time, Settings)    
-        game:GetService("TweenService"):Create(Obj, TweenInfo.new(Time), Settings):Play()
-    end
-    Tween(noob, 1.3, {ImageTransparency = 0})
+  wait(1)
+  local noob = script.Parent.Logo
+  Tween = function(Obj, Time, Settings)    
+      game:GetService("TweenService"):Create(Obj, TweenInfo.new(Time), Settings):Play()
+  end
+  Tween(noob, 1.3, {ImageTransparency = 0})
 
-    wait(3)
+  wait(3)
 
-    Tween(noob, 1.3, {ImageTransparency = 1})
-    wait(1)
+  Tween(noob, 1.3, {ImageTransparency = 1})
+  wait(1)
 
 
 print(juanko) 
@@ -88,7 +85,7 @@ TextButton.TextSize = 20.000
 TextButton.TextWrapped = true
 TextButton.ZIndex = 11 
 TextButton.MouseButton1Down:Connect(function()
-    Library:ToggleUI()
+  Library:ToggleUI()
 end)
 
 -- Dragging functionality for Mobile and PC:
@@ -97,68 +94,49 @@ local dragStartPos = nil
 local frameStartPos = nil
 
 local function updatePosition(input)
-    local delta = input.Position - dragStartPos
-    Frame.Position = UDim2.new(
-        frameStartPos.X.Scale,
-        frameStartPos.X.Offset + delta.X,
-        frameStartPos.Y.Scale,
-        frameStartPos.Y.Offset + delta.Y
-    )
+  local delta = input.Position - dragStartPos
+  Frame.Position = UDim2.new(
+      frameStartPos.X.Scale,
+      frameStartPos.X.Offset + delta.X,
+      frameStartPos.Y.Scale,
+      frameStartPos.Y.Offset + delta.Y
+  )
 end
 
 TextButton.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        draggingEnabled = true
-        dragStartPos = input.Position
-        frameStartPos = Frame.Position
-    end
+  if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+      draggingEnabled = true
+      dragStartPos = input.Position
+      frameStartPos = Frame.Position
+  end
 end)
 
 TextButton.InputEnded:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        draggingEnabled = false
-    end
+  if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+      draggingEnabled = false
+  end
 end)
 
 TextButton.InputChanged:Connect(function(input)
-    if draggingEnabled and
-        (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
-        updatePosition(input)
-    end
+  if draggingEnabled and
+      (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+      updatePosition(input)
+  end
 end)
 
 Frame.InputChanged:Connect(function(input)
-    if draggingEnabled and
-        (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
-        updatePosition(input)
-    end
+  if draggingEnabled and
+      (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+      updatePosition(input)
+  end
 end) 
 
 local Window = Library.CreateLib("🔥 PHOENIX-A - Nescoroco & ! rLow ⚫", "BloodTheme")
 
-local Tab = Window:NewTab("MAIN")
-local Section = Tab:NewSection("Information")
+local Tab = Window:NewTab("🔝Universal Scripts🔝")
+local Section = Tab:NewSection("Universal scripts to use in any game")
 
-Section:NewButton("NameButton", "info", function()
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50 
+Section:NewButton("Universal Fly", "This script allows you to fly anywhere", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro69Yes/sussy-Script/main/SecuredFlyGuiv3.lua'))()
 end)
 
-Section:NewSlider("NameSlider",Info,200,16,function(Y)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Y
-end) 
-
-Section:NewToggle("NameToggle", "info" ,function(state)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = state
-end)
-
-Section:NewTextBox("NameTextBox","info", function(txt)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
-end)
-
-Section:NewDropdown("NameDropDown", "Info", {"100", "200", "300", "400"}, function(K)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = K
-end) 
-
-Section:NewColorPicker("NameColorPicker","Info", Color3.fromRGB(255,255,255), function(XP)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = XP
-end)
